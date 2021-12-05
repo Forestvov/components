@@ -1,0 +1,115 @@
+
+
+.input{
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  padding-left: 26px;
+  position: relative;
+  transition: all 400ms;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  line-height: 22.4px;
+
+  &:hover{
+    color: rgba(blue, .5);
+    &::before{
+      border-color: rgba(blue, .5);
+    }
+  }
+
+  &::before{
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid #E0DDD9;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 400ms;
+  }
+
+  &::after{
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    position: absolute;
+    content: '';
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 400ms;
+  }
+
+  input{
+    display: none;
+  }
+
+  &.active{
+    color: blue;
+
+    &::before{
+      border-color: aqua;
+      background-color: aqua;
+    }
+
+    &::after{
+      opacity: 1;
+    }
+  }
+}
+
+.inner{
+  position: relative;
+  width: 100%;
+}
+
+.applay{
+  transition: opacity 400ms;
+  opacity: 0;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: orange;
+  border-radius: 4px;
+  z-index: 5;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 42px;
+  cursor: pointer;
+  padding: 0 22px;
+
+  &::before{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    content: '';
+    background-color: orange;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: -8px;
+  }
+}
+
+.fade_in {
+  transition: opacity 400ms;
+  opacity: 1;
+}
+
+.exit {
+  opacity: 0;
+}
+
+.fade_out {
+  transition: opacity 400ms;
+  opacity: 0;
+}
